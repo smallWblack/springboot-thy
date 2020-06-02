@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" >
+    <title>Title</title>
+</head>
+<body>
+<h1>展示列表，使用thymeleaf的一些表达式</h1>
+<table cellpadding="0" cellspacing="0" style="text-align: center">
+    <thead>
+    <th>姓名</th>
+    <th>年龄</th>
+    <th>体重</th>
+    <th>身高</th>
+    <th>班级</th>
+    <th>联系方式</th>
+    </thead>
+    <tbody>
+    <tr th:each="student,stat:${studentList}">
+        <td th:text="${student.getName()}" th:width="200px"></td>
+        <td th:text="${student.getAge()}" th:width="200px"></td>
+        <td th:text="${student.getWeight()}" th:width="200px"></td>
+        <td th:text="${student.getHeight()}" th:width="200px"></td>
+        <td th:text="${student.getStuClass()}" th:width="200px"/>
+        <td th:text="${student.getPhone()}" th:width="200px"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
